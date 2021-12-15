@@ -34,7 +34,7 @@ GROUP BY(`department_id`);
 
 5. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
 
-SELECT `students`.* 
+SELECT `students`.*, , `degrees`.`name` as "degree_name"
 FROM `students`
 INNER JOIN `degrees`
 ON `students`.`degree_id` = `degrees`.`id`
@@ -43,7 +43,7 @@ WHERE `degrees`.`name` = "Corso di Laurea in Economia";
 
 6. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
 
-SELECT `degrees`.*
+SELECT `degrees`.* , `departments`.`name` as "department_name"
 FROM `degrees`
 INNER JOIN `departments`
 ON `degrees`.`department_id` = `departments`.`id`
